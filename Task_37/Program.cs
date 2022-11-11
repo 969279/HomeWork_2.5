@@ -6,21 +6,22 @@
 
 int size = ReadInt("Введтие размер массива: ");
 int[] array = new int[size];
+
 Random rnd = new Random();
 
-void ReadArray(int[] numbers)
+void ReadArray(int[] number)
 {
-    for (int i = 0; i < numbers.Length; i++)
+    for (int i = 0; i < number.Length; i++)
     {
-        numbers[i] = rnd.Next(0, 10);
+        number[i] = rnd.Next(0, 10);
     }
 }
 
-void WriteArray(int[] numbers)
+void WriteArray(int[] number)
 {
-    for(int i = 0; i < (numbers.Length); i++)
+    for(int i = 0; i < (number.Length); i++)
     {
-        Console.Write($"{numbers[i]} ");
+        Console.Write($"{number[i]} ");
     }
     Console.WriteLine();
 }
@@ -31,12 +32,12 @@ int ReadInt(string message)
     return Convert.ToInt32(Console.ReadLine());
 }
 
-void MultiplyArray(int[] numbers, int[] nums)
+void MultiplyArray(int[] number, int[] composition)
 {
-    for(int i = 0; i < (array.Length / 2); i++)
+    for(int i = 0; i < (number.Length / 2); i++)
         {
-        nums[i] = array[i] * array[array.Length - 1 - i];
-        Console.Write($"{nums[i]} ");
+        composition[i] = number[i] * number[number.Length - 1 - i];
+        Console.Write($"{composition[i]} ");
         }
 }
 
@@ -45,14 +46,14 @@ WriteArray(array);
 
 if(size %2 == 0)
 {
-    int n = size / 2;
-    int[] nums = new int[n];
-    MultiplyArray(array, nums);
+    int num = size / 2;
+    int[] numbers = new int[num];
+    MultiplyArray(array, numbers);
 } 
 else 
 {
-    int n = size / 2 + 1;
-    int[] nums = new int[n];
-    MultiplyArray(array, nums);
-    Console.WriteLine(nums[array.Length / 2 - 1] = array[array.Length / 2]);
+    int num = size / 2 + 1;
+    int[] numbers = new int[num];
+    MultiplyArray(array, numbers);
+    Console.WriteLine(numbers[array.Length / 2 - 1] = array[array.Length / 2]);
 }
