@@ -8,6 +8,18 @@ int[] array = new int[size];
 int count = 0;
 Random rnd = new Random();
 
+ReadArray(array);
+WriteArray(array);
+
+for (int i = 0; i < array.Length; i++)
+    {
+        if(array[i] % 2 == 0)
+        {
+            count++;
+        }
+    }
+Console.WriteLine($"Количество чётных чисел в масииве: {count}");
+
 void ReadArray(int[] numbers)
 {
     for (int i = 0; i < numbers.Length; i++)
@@ -24,15 +36,3 @@ void WriteArray(int[] numbers)
     }
     Console.WriteLine($"{numbers[numbers.Length - 1]} ");
 }
-
-ReadArray(array);
-WriteArray(array);
-
-for (int i = 0; i < array.Length; i++)
-    {
-        if(array[i] % 2 == 0)
-        {
-            count = count + 1;
-        }
-    }
-Console.WriteLine($"Количество чётных чисел в масииве: {count}");

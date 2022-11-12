@@ -15,9 +15,9 @@ WriteArray(array);
 for (int i = 1; i < array.Length;)
 {
     sum = sum + array[i];
-    i = i + 2;
+    i += 2;
 }
-Console.WriteLine(sum);
+Console.WriteLine($"Сумма нечётных эллементов: {sum}");
 
 void ArrayRandomNumbers(int[] numbers)
 {

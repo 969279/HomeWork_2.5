@@ -4,10 +4,27 @@
 // [1 2 3 4 5] -> 5 8 3
 // [6 7 3 6] -> 36 21
 
-int size = ReadInt("Введтие размер массива: ");
+int size = ReadInt("Введите размер массива: ");
 int[] array = new int[size];
 
 Random rnd = new Random();
+
+ReadArray(array);
+WriteArray(array);
+
+if(size %2 == 0)
+{
+    int num = size / 2;
+    int[] numbers = new int[num];
+    MultiplyArray(array, numbers);
+} 
+else 
+{
+    int num = size / 2 + 1;
+    int[] numbers = new int[num];
+    MultiplyArray(array, numbers);
+    Console.WriteLine(numbers[array.Length / 2 - 1] = array[array.Length / 2]);
+}
 
 void ReadArray(int[] number)
 {
@@ -39,21 +56,4 @@ void MultiplyArray(int[] number, int[] composition)
         composition[i] = number[i] * number[number.Length - 1 - i];
         Console.Write($"{composition[i]} ");
         }
-}
-
-ReadArray(array);
-WriteArray(array);
-
-if(size %2 == 0)
-{
-    int num = size / 2;
-    int[] numbers = new int[num];
-    MultiplyArray(array, numbers);
-} 
-else 
-{
-    int num = size / 2 + 1;
-    int[] numbers = new int[num];
-    MultiplyArray(array, numbers);
-    Console.WriteLine(numbers[array.Length / 2 - 1] = array[array.Length / 2]);
 }
